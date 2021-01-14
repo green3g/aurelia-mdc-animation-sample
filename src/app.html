@@ -1,0 +1,27 @@
+<template>
+  <h2>Non MDC List</h2>
+  <ul class="au-stagger">
+    <li class="au-animate animate-fade-in animate-fade-out" repeat.for="item of items">${item}</li>
+</ul>
+
+<hr />
+
+<h2>MDC List</h2>
+<mdc-list-group>
+  <mdc-list two-line avatar class="au-stagger">
+  <div class="divider" data-content="Files"></div>
+  <mdc-list-item repeat.for="item of items" class="au-animate animate-fade-in animate-fade-out" click.delegate="handleEvent('select', file)" >
+
+      <!-- <img src="https://imagizer.imageshack.com/v2/260x260q90/c/903/q5d7va.jpg" alt="" class="image mt-2"> -->
+      <mdc-icon mdc-list-item-graphic>folder</mdc-icon>
+
+      <mdc-list-item-primary-text>${item}</mdc-list-item-primary-text>
+      <mdc-list-item-secondary-text>secondary</mdc-list-item-secondary-text>
+      <a href="#" mdc-list-item-meta aria-label="View more" title="More info">
+          <mdc-icon>delete</mdc-icon>
+      </a>
+  </mdc-list-item>
+
+  </mdc-list>
+</mdc-list-group>
+</template>
